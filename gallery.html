@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Media Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="nav-group">
+            <span class="nav-label">Media Type</span>
+            <button class="nav-btn main-link" onclick="openFolder('videos')">🎬 Videos</button>
+        </div>
+        
+        <div class="nav-group">
+            <span class="nav-label">Photo Categories</span>
+            <button class="nav-btn" onclick="showMainGallery()">All Albums</button>
+            <button class="nav-btn" onclick="openFolder('car')">Cars</button>
+            <button class="nav-btn" onclick="openFolder('nature')">Nature</button>
+            <button class="nav-btn" onclick="openFolder('cricket')">Cricket</button>
+            <button class="nav-btn" onclick="openFolder('people')">People</button>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <h1 id="gallery-title">Gallery</h1>
+
+        <button id="back-btn" onclick="showMainGallery()">← Back to Albums</button>
+
+        <div id="sub-gallery" class="sub-gallery"></div>
+
+        <div class="gallery" id="gallery-grid">
+            
+            <div class="folder car" onclick="openFolder('car')">
+                <div class="thumb-wrapper">
+                    <img src="https://www.bmw.com.sg/content/dam/bmw/common/all-models/m-series/series-overview/bmw-m-series-seo-overview-ms-04.jpg" alt="Cars">
+                </div>
+                <div class="folder-info"><h3>Cars</h3><p>7</p></div>
+            </div>
+
+            <div class="folder nature" onclick="openFolder('nature')">
+                <div class="thumb-wrapper">
+                    <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="Nature">
+                </div>
+                <div class="folder-info"><h3>Nature</h3><p>3</p></div>
+            </div>
+
+            <div class="folder cricket" onclick="openFolder('cricket')">
+                <div class="thumb-wrapper">
+                    <img src="https://i.pinimg.com/736x/1d/5c/4f/1d5c4f46ee81521c9d74b0d1278bbff3.jpg" alt="Cricket">
+                </div>
+                <div class="folder-info"><h3>Cricket</h3><p>4</p></div>
+            </div>
+
+            <div class="folder people" onclick="openFolder('people')">
+                <div class="thumb-wrapper">
+                    <img src="https://cdn-icons-png.flaticon.com/512/878/878516.png" alt="People">
+                </div>
+                <div class="folder-info"><h3>People</h3><p>3</p></div>
+            </div>
+
+            <div class="folder videos" onclick="openFolder('videos')">
+                <div class="thumb-wrapper video-folder">
+                    <img src="https://img.freepik.com/premium-vector/3d-colorful-play-button-media-video-player-logo-template_349893-37.jpg?w=740" alt="Videos">
+                </div>
+                <div class="folder-info"><h3>Videos</h3><p>3</p></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    
+    <button class="nav-arrow prev" onclick="changeMedia(-1, event)">&#10094;</button>
+    
+    <div id="lightbox-content-container" onclick="event.stopPropagation()">
+        </div>
+
+    <button class="nav-arrow next" onclick="changeMedia(1, event)">&#10095;</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
